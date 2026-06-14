@@ -1,3 +1,4 @@
+from http.server import BaseHTTPRequestHandler
 import importlib.util
 import json
 from pathlib import Path
@@ -16,4 +17,4 @@ def test_vercel_handler_imports():
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
 
-    assert hasattr(module, "handler")
+    assert issubclass(module.handler, BaseHTTPRequestHandler)
