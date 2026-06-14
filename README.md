@@ -25,22 +25,6 @@ You can also pipe an email into the detector:
 cat samples/phishing.eml | fisherman
 ```
 
-## Web UI
-
-Start the browser interface:
-
-```bash
-fisherman-web --host 127.0.0.1 --port 8080
-```
-
-Open `http://127.0.0.1:8080`, paste or write the email/message, and click **Analyze message**. The UI displays the classification, risk score, extracted URLs, sender/subject metadata, and all explainable risk signals.
-
-You can also run the UI without installing the package:
-
-```bash
-PYTHONPATH=src python -m fisherman.web
-```
-
 ## Python API
 
 ```python
