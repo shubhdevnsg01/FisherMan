@@ -4,6 +4,7 @@ FisherMan is a transparent phishing email detection system for scanning RFC 5322
 
 ## Features
 
+- Browser UI for pasting or writing emails/messages and instantly analyzing them.
 - Parses raw `.eml` messages, MIME parts, headers, plain text, and HTML bodies.
 - Scores phishing indicators such as urgent language, credential requests, failed SPF/DKIM/DMARC, dangerous attachments, suspicious TLDs, URL shorteners, IP-address links, redirect parameters, and brand impersonation.
 - Provides JSON output for SIEM/SOAR automation and human-readable CLI output for analysts.

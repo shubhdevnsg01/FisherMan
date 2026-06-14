@@ -102,8 +102,10 @@ class PhishingDetector:
 
     def _parse_email(self, content: str | bytes) -> Message | None:
         raw = content if isinstance(content, bytes) else content.encode("utf-8", errors="ignore")
-        header_lines = raw.splitlines()[:5]
-        if not header_lines or not any(b":" in line for line in header_lines):
+        header_lines = raw.splitlines()[:8]
+        common_headers = (b"from:", b"to:", b"subject:", b"date:", b"mime-version:", b"content-type:")
+        normalized_headers = [line.lower().lstrip() for line in header_lines]
+        if not header_lines or not any(line.startswith(common_headers) for line in normalized_headers):
             return None
         parser = BytesParser(policy=policy.default)
         try:

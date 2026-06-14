@@ -19,6 +19,7 @@ classifiers = [
 
 [project.scripts]
 fisherman = "fisherman.cli:main"
+fisherman-web = "fisherman.web:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
