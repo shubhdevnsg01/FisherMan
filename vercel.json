@@ -4,7 +4,7 @@
     { "source": "/(.*)", "destination": "/api/web" }
   ],
   "functions": {
-    "api/**/*.py": {
+    "api/web.py": {
       "excludeFiles": "{tests/**,__pycache__/**,.pytest_cache/**,samples/**,**/*.pyc}"
     }
   }

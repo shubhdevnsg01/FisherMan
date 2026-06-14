@@ -7,7 +7,7 @@ def test_vercel_config_rewrites_to_python_function():
     config = json.loads(Path("vercel.json").read_text())
 
     assert config["rewrites"] == [{"source": "/(.*)", "destination": "/api/web"}]
-    assert "api/**/*.py" in config["functions"]
+    assert "api/web.py" in config["functions"]
 
 
 def test_vercel_handler_imports():

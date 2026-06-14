@@ -61,6 +61,8 @@ vercel --prod
 
 Vercel will run the same UI as the local `fisherman-web` command, so visitors can paste or write an email/message in the browser and submit it for phishing analysis.
 
+If Vercel reports that a `functions` pattern does not match any Serverless Functions, make sure your deployed commit includes `api/web.py` and the exact `api/web.py` key in `vercel.json`.
+
 ## Python API
 
 ```python
