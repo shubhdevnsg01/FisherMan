@@ -23,3 +23,6 @@ fisherman-web = "fisherman.web:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.vercel]
+entrypoint = "api.web:handler"

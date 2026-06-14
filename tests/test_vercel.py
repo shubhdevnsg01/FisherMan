@@ -1,4 +1,5 @@
 from http.server import BaseHTTPRequestHandler
+import tomllib
 import importlib.util
 import json
 from pathlib import Path
@@ -18,3 +19,9 @@ def test_vercel_handler_imports():
     spec.loader.exec_module(module)
 
     assert issubclass(module.handler, BaseHTTPRequestHandler)
+
+
+def test_pyproject_declares_vercel_entrypoint():
+    config = tomllib.loads(Path("pyproject.toml").read_text())
+
+    assert config["tool"]["vercel"]["entrypoint"] == "api.web:handler"
