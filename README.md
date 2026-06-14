@@ -24,7 +24,18 @@ You can also pipe an email into the detector:
 ```bash
 cat samples/phishing.eml | fisherman
 ```
+## Starter example
 
+Paste this starter phishing sample into the web UI or save it as an `.eml` file and scan it with the CLI:
+
+```email
+From: Account Security <support-alert@secure-login.example.xyz>
+Subject: Urgent account verification required
+Authentication-Results: mx.example; spf=fail dkim=fail dmarc=fail
+Content-Type: text/plain; charset=utf-8
+
+Your Microsoft password expires immediately. Verify your account at http://192.0.2.10/login?redirect=https://microsoft.com or your account will be suspended
+``````````````````
 ## Web UI
 
 Start the browser interface:
