@@ -25,6 +25,42 @@ You can also pipe an email into the detector:
 cat samples/phishing.eml | fisherman
 ```
 
+## Web UI
+
+Start the browser interface:
+
+```bash
+fisherman-web --host 127.0.0.1 --port 8080
+```
+
+Open `http://127.0.0.1:8080`, paste or write the email/message, and click **Analyze message**. The UI displays the classification, risk score, extracted URLs, sender/subject metadata, and all explainable risk signals.
+
+You can also run the UI without installing the package:
+
+```bash
+PYTHONPATH=src python -m fisherman.web
+```
+
+## Deploy to Vercel
+
+Yes, FisherMan can be hosted on Vercel. This repository includes a Vercel Python Function entrypoint at `api/web.py` and a `vercel.json` rewrite that sends browser requests to that function.
+
+Deploy with the Vercel CLI:
+
+```bash
+npm i -g vercel
+vercel login
+vercel
+```
+
+For production after the preview deploy succeeds:
+
+```bash
+vercel --prod
+```
+
+Vercel will run the same UI as the local `fisherman-web` command, so visitors can paste or write an email/message in the browser and submit it for phishing analysis.
+
 ## Python API
 
 ```python
