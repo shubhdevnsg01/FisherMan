@@ -61,7 +61,7 @@ vercel --prod
 
 Vercel will run the same UI as the local `fisherman-web` command, so visitors can paste or write an email/message in the browser and submit it for phishing analysis.
 
-If Vercel reports that a `functions` pattern does not match any Serverless Functions, make sure your deployed commit includes `api/web.py`. The Vercel handler must directly inherit from `BaseHTTPRequestHandler`, which this repository's `api/web.py` does.
+If Vercel reports that a `functions` pattern does not match any Serverless Functions, remove any stale project-level or local `functions` override and deploy this version. This repository now lets Vercel auto-detect `api/web.py` instead of configuring a `functions` pattern manually.
 
 ## Python API
 
