@@ -42,26 +42,7 @@ PYTHONPATH=src python -m fisherman.web
 ```
 
 ## Deploy to Vercel
-
-Yes, FisherMan can be hosted on Vercel. This repository includes a Vercel Python Function entrypoint at `api/web.py` and a `vercel.json` rewrite that sends browser requests to that function.
-
-Deploy with the Vercel CLI:
-
-```bash
-npm i -g vercel
-vercel login
-vercel
-```
-
-For production after the preview deploy succeeds:
-
-```bash
-vercel --prod
-```
-
-Vercel will run the same UI as the local `fisherman-web` command, so visitors can paste or write an email/message in the browser and submit it for phishing analysis.
-
-If Vercel reports that no Python entrypoint was found, make sure your deployed commit includes the `[tool.vercel]` entrypoint in `pyproject.toml`, which points Vercel at `api.web:handler`.
+I have deployed this project.You can check it out here:- https://fisher-man.vercel.app/
 
 ## Python API
 
