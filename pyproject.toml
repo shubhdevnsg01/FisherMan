@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fisherman"
+version = "0.1.0"
+description = "A phishing email detection system with heuristic scoring, explainability, and a CLI."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "FisherMan" }]
+license = { text = "MIT" }
+keywords = ["phishing", "email", "security", "detection"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Security",
+  "Topic :: Communications :: Email",
+]
+
+[project.scripts]
+fisherman = "fisherman.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
